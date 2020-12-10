@@ -1,0 +1,39 @@
+name: portfolio
+description: Fluttter web portfolio
+
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.7.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+
+  cupertino_icons: ^1.0.1+1
+  google_fonts: ^1.1.1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+flutter:
+
+
+  uses-material-design: true
+
+
+  #  assets:
+  #    - assets/
+  #   - images/a_dot_ham.jpeg
+
+
+#  fonts:
+#    - family: GoogleSansRegular
+#      fonts:
+#        - asset: assets/GoogleSansRegular.ttf
+  #       - asset: fonts/Schyler-Italic.ttf
+  #         style: italic
