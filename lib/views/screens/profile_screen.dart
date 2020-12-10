@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/palette.dart';
 import 'package:portfolio/views/widgets/about_info.dart';
+import 'package:portfolio/views/widgets/dropa_a_line.dart';
 import 'package:portfolio/views/widgets/my_skills.dart';
 import 'package:portfolio/views/widgets/nav_header.dart';
 import 'package:portfolio/views/widgets/profile_info.dart';
@@ -89,11 +90,15 @@ class ProfileScreen extends StatelessWidget {
                 ),
                 AboutMe(),
                 SizedBox(
-                  height: totalSize.height * 0.1,
+                  height: totalSize.height * 0.2,
                 ),
                 MySkills(),
                 SizedBox(
-                  height: totalSize.height * 0.1,
+                  height: totalSize.height * 0.2,
+                ),
+                DropALine(),
+                SizedBox(
+                  height: totalSize.height * 0.2,
                 ),
                 SocialInfo()
               ],

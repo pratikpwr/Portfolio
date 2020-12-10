@@ -64,6 +64,9 @@ class MySkills extends StatelessWidget {
           fontSize: 32,
         ),
         HeadingUnderline(),
+        SizedBox(
+          height: 32,
+        ),
         ResponsiveWidget(
           smallScreen: Row(
             mainAxisAlignment: MainAxisAlignment.center,

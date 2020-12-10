@@ -15,6 +15,9 @@ class SocialInfo extends StatelessWidget {
             fontSize: 32,
           ),
           HeadingUnderline(),
+          SizedBox(
+            height: 32,
+          ),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
@@ -38,16 +41,14 @@ class SocialButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: onTap,
-      child: Padding(
-        padding: const EdgeInsets.all(12.0),
-        child: Image.asset(
-          image,
-          height: MediaQuery.of(context).size.height * 0.05,
-          width: MediaQuery.of(context).size.height * 0.05,
-          fit: BoxFit.cover,
-        ),
+    return FlatButton(
+      onPressed: onTap,
+      padding: const EdgeInsets.all(12.0),
+      child: Image.asset(
+        image,
+        height: MediaQuery.of(context).size.height * 0.05,
+        width: MediaQuery.of(context).size.height * 0.05,
+        fit: BoxFit.cover,
       ),
     );
   }

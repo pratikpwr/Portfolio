@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio/palette.dart';
 import 'package:portfolio/views/screens/profile_screen.dart';
 
 void main() {
@@ -13,6 +14,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         brightness: Brightness.light,
         scaffoldBackgroundColor: Colors.white,
+        primaryColor: Palette.primaryColor,
         fontFamily: "GoogleSansRegular",
       ),
       debugShowCheckedModeBanner: false,

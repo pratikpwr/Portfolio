@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:portfolio/palette.dart';
+import 'package:portfolio/views/widgets/PictureIllustration.dart';
 import 'package:portfolio/views/widgets/custom_button.dart';
 import 'package:portfolio/views/widgets/heading_underline.dart';
 import 'package:portfolio/views/widgets/responsive_handler_widget.dart';
@@ -25,7 +26,9 @@ class AboutMe extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
               AboutDetails(),
-              PictureSVG(),
+              PictureIllustration(
+                image: 'flutter_dev.png',
+              ),
             ],
           ),
         ],
@@ -40,32 +43,12 @@ class AboutMe extends StatelessWidget {
             fontSize: 32,
           ),
           HeadingUnderline(),
-          PictureSVG(),
+          PictureIllustration(image: 'flutter_dev.png',),
           SizedBox(
             height: 40,
           ),
           AboutDetails()
         ],
-      ),
-    );
-  }
-}
-
-class PictureSVG extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-          // border: Border.all(width: 12, color: Palette.lightPrimaryColor)
-          ),
-      child: Image.asset(
-        'flutter_dev.png',
-        height: ResponsiveWidget.isSmallScreen(context)
-            ? MediaQuery.of(context).size.height * 0.3
-            : MediaQuery.of(context).size.width * 0.25,
-        width: ResponsiveWidget.isSmallScreen(context)
-            ? MediaQuery.of(context).size.height * 0.3
-            : MediaQuery.of(context).size.width * 0.25,
       ),
     );
   }
