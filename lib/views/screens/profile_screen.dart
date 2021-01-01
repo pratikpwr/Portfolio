@@ -94,7 +94,7 @@ class ProfileScreen extends StatelessWidget {
                 ),
                 MySkills(),
                 SizedBox(
-                  height: totalSize.height * 0.2,
+                  height: totalSize.height * 0.18,
                 ),
                 DropALine(),
                 SizedBox(

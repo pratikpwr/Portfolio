@@ -87,7 +87,7 @@ class Intro extends StatelessWidget {
           height: totalSize.height * 0.02,
         ),
         CustomButton(
-          text: 'HIRE ME',
+          text: 'CONTACT ME',
           onTap: () {},
         )
       ],
