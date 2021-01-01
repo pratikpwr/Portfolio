@@ -15,6 +15,7 @@ dependencies:
 
   cupertino_icons: ^1.0.1+1
   google_fonts: ^1.1.1
+  scroll_to_id: ^1.4.0
 
 dev_dependencies:
   flutter_test:

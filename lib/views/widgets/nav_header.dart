@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/palette.dart';
+import 'package:portfolio/views/widgets/nav_button.dart';
 import 'package:portfolio/views/widgets/responsive_handler_widget.dart';
 
 class NavHeader extends StatelessWidget {
@@ -15,42 +16,42 @@ class NavHeader extends StatelessWidget {
       children: [
         Logo(),
         // if (!ResponsiveWidget.isSmallScreen(context))
-        Row(
-          children: [
-            NavButton(
-              text: 'Home',
-              onTap: () {},
-            ),
-            SizedBox(
-              width: totalSize.width * 0.02,
-            ),
-            NavButton(
-              text: 'About',
-              onTap: () {},
-            ),
-            SizedBox(
-              width: totalSize.width * 0.02,
-            ),
-            NavButton(
-              text: 'Skills',
-              onTap: () {},
-            ),
-            SizedBox(
-              width: totalSize.width * 0.02,
-            ),
-            NavButton(
-              text: 'Projects',
-              onTap: () {},
-            ),
-            SizedBox(
-              width: totalSize.width * 0.02,
-            ),
-            NavButton(
-              text: 'Contact',
-              onTap: () {},
-            )
-          ],
-        )
+        // Row(
+        //   children: [
+        //     NavButton(
+        //       text: 'Home',
+        //       onTap: () {},
+        //     ),
+        //     SizedBox(
+        //       width: totalSize.width * 0.02,
+        //     ),
+        //     NavButton(
+        //       text: 'About',
+        //       onTap: () {},
+        //     ),
+        //     SizedBox(
+        //       width: totalSize.width * 0.02,
+        //     ),
+        //     NavButton(
+        //       text: 'Skills',
+        //       onTap: () {},
+        //     ),
+        //     SizedBox(
+        //       width: totalSize.width * 0.02,
+        //     ),
+        //     NavButton(
+        //       text: 'Projects',
+        //       onTap: () {},
+        //     ),
+        //     SizedBox(
+        //       width: totalSize.width * 0.02,
+        //     ),
+        //     NavButton(
+        //       text: 'Contact',
+        //       onTap: () {},
+        //     )
+        //   ],
+        // )
       ],
     ));
   }
@@ -77,23 +78,3 @@ class Logo extends StatelessWidget {
   }
 }
 
-class NavButton extends StatelessWidget {
-  final String text;
-  final Function onTap;
-
-  NavButton({this.text, this.onTap});
-
-  @override
-  Widget build(BuildContext context) {
-    return TextButton(
-      child: Text(
-        text,
-        style: TextStyle(
-            color: Palette.titleColor,
-            fontWeight: FontWeight.w500,
-            fontSize: 16),
-      ),
-      onPressed: onTap,
-    );
-  }
-}
