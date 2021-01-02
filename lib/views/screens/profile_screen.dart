@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/palette.dart';
 import 'package:portfolio/views/widgets/sections/about_info.dart';
-import 'package:portfolio/views/widgets/sections/dropa_a_line.dart';
+import 'package:portfolio/views/widgets/sections/drop_a_line.dart';
 import 'package:portfolio/views/widgets/sections/my_skills.dart';
 import 'package:portfolio/views/widgets/buttons/nav_button.dart';
 import 'package:portfolio/views/widgets/sections/profile_info.dart';
 import 'package:portfolio/views/widgets/responsive_handler_widget.dart';
+import 'package:portfolio/views/widgets/sections/projects.dart';
+import 'package:portfolio/views/widgets/sections/resume.dart';
 import 'package:portfolio/views/widgets/sections/social_info.dart';
 import 'package:scroll_to_id/scroll_to_id.dart';
 
@@ -70,6 +72,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                         children: [
                           _space01(totalSize),
                           AboutMe(),
+                          _space01(totalSize),
                         ],
                       )),
                   ScrollContent(
@@ -78,15 +81,32 @@ class _ProfileScreenState extends State<ProfileScreen> {
                         children: [
                           _space01(totalSize),
                           MySkills(),
-                          SizedBox(
-                            height: totalSize.height * 0.18,
-                          ),
+                          _space01(totalSize),
+                        ],
+                      )),
+                  ScrollContent(
+                      id: 'resume',
+                      child: Column(
+                        children: [
+                          _space01(totalSize),
+                          Resume(),
+                          _space01(totalSize),
+                        ],
+                      )),
+                  ScrollContent(
+                      id: 'projects',
+                      child: Column(
+                        children: [
+                          _space01(totalSize),
+                          Projects(),
+                          _space01(totalSize),
                         ],
                       )),
                   ScrollContent(
                       id: 'drop_a_line',
                       child: Column(
                         children: [
+                          _space01(totalSize),
                           DropALine(),
                           _space01(totalSize),
                           _space01(totalSize),
@@ -149,14 +169,17 @@ class _ProfileScreenState extends State<ProfileScreen> {
             text: 'Resume',
             icon: Icons.insert_drive_file_outlined,
             onTap: () {
-              _scrollToId.animateTo('skills',
+              _scrollToId.animateTo('resume',
                   duration: Duration(milliseconds: 500), curve: Curves.easeIn);
             },
           ),
           NavButton(
             text: 'Projects',
             icon: Icons.work_outline_rounded,
-            onTap: () {},
+            onTap: () {
+              _scrollToId.animateTo('projects',
+                  duration: Duration(milliseconds: 500), curve: Curves.easeIn);
+            },
           ),
           NavButton(
             text: 'Contact',
