@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/palette.dart';
-import 'package:portfolio/views/widgets/about_info.dart';
-import 'package:portfolio/views/widgets/dropa_a_line.dart';
-import 'package:portfolio/views/widgets/my_skills.dart';
-import 'package:portfolio/views/widgets/nav_button.dart';
-import 'package:portfolio/views/widgets/nav_header.dart';
-import 'package:portfolio/views/widgets/profile_info.dart';
+import 'package:portfolio/views/widgets/sections/about_info.dart';
+import 'package:portfolio/views/widgets/sections/dropa_a_line.dart';
+import 'package:portfolio/views/widgets/sections/my_skills.dart';
+import 'package:portfolio/views/widgets/buttons/nav_button.dart';
+import 'package:portfolio/views/widgets/sections/profile_info.dart';
 import 'package:portfolio/views/widgets/responsive_handler_widget.dart';
-import 'package:portfolio/views/widgets/social_info.dart';
+import 'package:portfolio/views/widgets/sections/social_info.dart';
 import 'package:scroll_to_id/scroll_to_id.dart';
 
 class ProfileScreen extends StatefulWidget {
@@ -22,9 +21,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
 
   ScrollToId _scrollToId;
 
-  void _scrollListener() {
-    print(_scrollToId.idPosition());
-  }
+  void _scrollListener() {}
 
   @override
   void initState() {
@@ -40,16 +37,16 @@ class _ProfileScreenState extends State<ProfileScreen> {
     return ResponsiveWidget(
         largeScreen: Scaffold(
       key: _scaffoldKey,
+      // floatingActionButton: _floatingActionButton(),
       body: Stack(
         children: [
           AnimatedPadding(
-
             padding: EdgeInsets.symmetric(
-                horizontal: ResponsiveWidget.isSmallScreen(context)
-                    ? totalSize.height * 0.1
-                    : totalSize.height * 0.2,
-                vertical: totalSize.height * 0.015),
-            duration: Duration(seconds: 1),
+              horizontal: ResponsiveWidget.isSmallScreen(context)
+                  ? totalSize.height * 0.1
+                  : totalSize.height * 0.2,
+            ),
+            duration: Duration(milliseconds: 400),
             child: ResponsiveWidget(
               largeScreen: InteractiveScrollViewer(
                 scrollToId: _scrollToId,
@@ -61,28 +58,25 @@ class _ProfileScreenState extends State<ProfileScreen> {
                           SizedBox(
                             height: ResponsiveWidget.isSmallScreen(context)
                                 ? totalSize.height * 0.05
-                                : totalSize.height * 0.15,
+                                : totalSize.height * 0.2,
                           ),
                           ProfileInfo(),
-                          SizedBox(
-                            height: totalSize.height * 0.2,
-                          ),
+                          _space01(totalSize),
                         ],
                       )),
                   ScrollContent(
                       id: 'about',
                       child: Column(
                         children: [
+                          _space01(totalSize),
                           AboutMe(),
-                          SizedBox(
-                            height: totalSize.height * 0.2,
-                          ),
                         ],
                       )),
                   ScrollContent(
                       id: 'skills',
                       child: Column(
                         children: [
+                          _space01(totalSize),
                           MySkills(),
                           SizedBox(
                             height: totalSize.height * 0.18,
@@ -94,9 +88,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       child: Column(
                         children: [
                           DropALine(),
-                          SizedBox(
-                            height: totalSize.height * 0.2,
-                          ),
+                          _space01(totalSize),
+                          _space01(totalSize),
                           SocialInfo(),
                         ],
                       ))
@@ -105,59 +98,76 @@ class _ProfileScreenState extends State<ProfileScreen> {
             ),
           ),
           !ResponsiveWidget.isSmallScreen(context)
-              ? Container(
-                  height: totalSize.height,
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      NavButton(
-                        text: 'Home',
-                        icon: Icons.home_outlined,
-                        onTap: () {
-                          _scrollToId.animateTo('profile',
-                              duration: Duration(milliseconds: 500),
-                              curve: Curves.ease);
-                        },
-                      ),
-                      NavButton(
-                        text: 'About',
-                        icon: Icons.person_outline_rounded,
-                        onTap: () {
-                          _scrollToId.animateTo('about',
-                              duration: Duration(milliseconds: 500),
-                              curve: Curves.ease);
-                        },
-                      ),
-                      NavButton(
-                        text: 'Resume',
-                        icon: Icons.insert_drive_file_outlined,
-                        onTap: () {
-                          print('skills');
-                          _scrollToId.animateTo('skills',
-                              duration: Duration(milliseconds: 500),
-                              curve: Curves.ease);
-                        },
-                      ),
-                      NavButton(
-                        text: 'Projects',
-                        icon: Icons.work_outline_rounded,
-                        onTap: () {},
-                      ),
-                      NavButton(
-                        text: 'Contact',
-                        icon: Icons.mail_outline_rounded,
-                        onTap: () {
-                          _scrollToId.animateTo('drop_a_line',
-                              duration: Duration(milliseconds: 500),
-                              curve: Curves.ease);
-                        },
-                      )
-                    ],
-                  ),
-                )
+              ? _navBar(totalSize)
               : Stack(),
         ],
       ),
     ));
+  }
+
+  FloatingActionButton _floatingActionButton() {
+    return FloatingActionButton(
+      child: Icon(Icons.arrow_upward_rounded),
+      backgroundColor: Palette.primaryColor,
+      onPressed: () {
+        _scrollToId.animateTo('profile',
+            duration: Duration(milliseconds: 500), curve: Curves.easeIn);
+      },
+    );
+  }
+
+  SizedBox _space01(Size totalSize) {
+    return SizedBox(
+      height: totalSize.height * 0.1,
+    );
+  }
+
+  Widget _navBar(Size totalSize) {
+    return Container(
+      height: totalSize.height,
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          NavButton(
+            text: 'Home',
+            icon: Icons.home_outlined,
+            onTap: () {
+              _scrollToId.animateTo('profile',
+                  duration: Duration(milliseconds: 500), curve: Curves.easeIn);
+            },
+          ),
+          NavButton(
+            text: 'About',
+            icon: Icons.person_outline_rounded,
+            onTap: () {
+              _scrollToId.animateTo('about',
+                  duration: Duration(milliseconds: 500), curve: Curves.easeIn);
+            },
+          ),
+          NavButton(
+            text: 'Resume',
+            icon: Icons.insert_drive_file_outlined,
+            onTap: () {
+              _scrollToId.animateTo('skills',
+                  duration: Duration(milliseconds: 500), curve: Curves.easeIn);
+            },
+          ),
+          NavButton(
+            text: 'Projects',
+            icon: Icons.work_outline_rounded,
+            onTap: () {},
+          ),
+          NavButton(
+            text: 'Contact',
+            icon: Icons.mail_outline_rounded,
+            onTap: () {
+              _scrollToId.animateTo('drop_a_line',
+                  duration: Duration(milliseconds: 500), curve: Curves.easeIn);
+            },
+          )
+        ],
+      ),
+    );
   }
 }

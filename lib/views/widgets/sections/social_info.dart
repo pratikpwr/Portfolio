@@ -21,10 +21,10 @@ class SocialInfo extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              SocialButton(image: 'github_logo.png', onTap: () {}),
-              SocialButton(image: 'linked_logo.jpg', onTap: () {}),
-              SocialButton(image: 'insta_logo.jpg', onTap: () {}),
-              SocialButton(image: 'email_logo.jpg', onTap: () {})
+              SocialInfoButton(image: 'github_logo.png', onTap: () {}),
+              SocialInfoButton(image: 'linked_logo.jpg', onTap: () {}),
+              SocialInfoButton(image: 'insta_logo.jpg', onTap: () {}),
+              SocialInfoButton(image: 'email_logo.jpg', onTap: () {})
             ],
           ),
         ],
@@ -33,11 +33,11 @@ class SocialInfo extends StatelessWidget {
   }
 }
 
-class SocialButton extends StatelessWidget {
+class SocialInfoButton extends StatelessWidget {
   final String image;
   final Function onTap;
 
-  const SocialButton({@required this.image, @required this.onTap});
+  const SocialInfoButton({@required this.image, @required this.onTap});
 
   @override
   Widget build(BuildContext context) {

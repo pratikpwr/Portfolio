@@ -13,9 +13,12 @@ dependencies:
     sdk: flutter
 
 
-  cupertino_icons: ^1.0.1+1
+  cupertino_icons: ^1.0.2
   google_fonts: ^1.1.1
   scroll_to_id: ^1.4.0
+  animated_text_kit: ^3.1.0
+  flutter_animation_progress_bar: ^1.0.6
+  social_media_buttons: ^0.1.2
 
 dev_dependencies:
   flutter_test:
@@ -32,9 +35,9 @@ flutter:
   #   - images/a_dot_ham.jpeg
 
 
-#  fonts:
-#    - family: GoogleSansRegular
-#      fonts:
-#        - asset: assets/GoogleSansRegular.ttf
+  #  fonts:
+  #    - family: GoogleSansRegular
+  #      fonts:
+  #        - asset: assets/GoogleSansRegular.ttf
   #       - asset: fonts/Schyler-Italic.ttf
   #         style: italic

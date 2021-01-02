@@ -1,8 +1,11 @@
+import 'package:animated_text_kit/animated_text_kit.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:portfolio/palette.dart';
-import 'package:portfolio/views/widgets/custom_button.dart';
 import 'package:portfolio/views/widgets/responsive_handler_widget.dart';
+import 'package:portfolio/views/widgets/buttons/social_button.dart';
+import 'package:social_media_buttons/social_media_buttons.dart';
 
 class ProfileInfo extends StatelessWidget {
   @override
@@ -73,23 +76,51 @@ class Intro extends StatelessWidget {
             style: GoogleFonts.poppins(
                 color: Palette.titleColor,
                 fontWeight: FontWeight.bold,
-                fontSize: ResponsiveWidget.isMediumScreen(context) ? 46 : 50),
+                fontSize: ResponsiveWidget.isMediumScreen(context) ? 46 : 54),
           ),
         ),
-        Text(
-          'Flutter Developer &\nMobile Application Developer',
-          style: TextStyle(
-              color: Palette.titleColor,
+        TypewriterAnimatedTextKit(
+          text: ['Flutter Developer', 'UI/UX Designer', 'Freelancer'],
+          textStyle: TextStyle(
+              color: Palette.primaryColor,
               fontWeight: FontWeight.w500,
-              fontSize: 20),
+              fontSize: 24),
+          textAlign: TextAlign.start,
+          speed: Duration(milliseconds: 150),
+          pause: Duration(milliseconds: 150),
         ),
         SizedBox(
-          height: totalSize.height * 0.02,
+          height: totalSize.height * 0.03,
         ),
-        CustomButton(
-          text: 'CONTACT ME',
-          onTap: () {},
-        )
+        Row(
+          children: [
+            SocialButton(
+              url: 'https://www.github.com/pratikpwr',
+              icon: SocialMediaIcons.github_circled,
+            ),
+            SizedBox(
+              width: 10,
+            ),
+            SocialButton(
+              url: 'https://www.linkedin.com/in/pratikpwr/',
+              icon: SocialMediaIcons.linkedin_squared,
+            ),
+            SizedBox(
+              width: 10,
+            ),
+            SocialButton(
+              url: 'https://www.instagram.com/_.pratikpawar._/',
+              icon: SocialMediaIcons.instagram,
+            ),
+          ],
+        ),
+        // SizedBox(
+        //   height: totalSize.height * 0.02,
+        // ),
+        // CustomButton(
+        //   text: 'CONTACT ME',
+        //   onTap: () {},
+        // )
       ],
     );
   }
