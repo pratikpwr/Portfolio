@@ -44,7 +44,7 @@ class Projects extends StatelessWidget {
                       !ResponsiveWidget.isLargeScreen(context) ? 1 : 2,
                       crossAxisSpacing: 25,
                       mainAxisSpacing: 15,
-                      childAspectRatio: 1.5),
+                      childAspectRatio: 1.8),
                   itemCount: _projects.length,
                   itemBuilder: (_, index) {
                     return ProjectCard(project: _projects[index]);

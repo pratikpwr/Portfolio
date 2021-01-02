@@ -54,7 +54,7 @@ class _ProjectCardState extends State<ProjectCard> {
         },
         child: Stack(
           children: [
-            Image.network(
+            Image.asset(
               widget.project.imageUrl[0],
               height: totalSize.height,
               width: totalSize.width,
