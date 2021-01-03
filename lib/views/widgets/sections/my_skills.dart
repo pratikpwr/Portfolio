@@ -61,7 +61,7 @@ class MySkills extends StatelessWidget {
                     crossAxisCount: 2,
                     crossAxisSpacing: 70,
                     mainAxisSpacing: 10,
-                    childAspectRatio: 10),
+                    childAspectRatio: 9),
                 itemCount: skills.length,
                 itemBuilder: (context, index) {
                   return _skillBar(

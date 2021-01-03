@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:portfolio/palette.dart';
 import 'package:portfolio/views/widgets/sections/about_info.dart';
@@ -42,19 +43,19 @@ class _ProfileScreenState extends State<ProfileScreen> {
       // floatingActionButton: _floatingActionButton(),
       body: Stack(
         children: [
-          AnimatedPadding(
-            padding: EdgeInsets.symmetric(
-              horizontal: ResponsiveWidget.isSmallScreen(context)
-                  ? totalSize.height * 0.1
-                  : totalSize.height * 0.2,
+          if (kDebugMode)
+            Text(
+              _screenSize(context),
             ),
-            duration: Duration(milliseconds: 400),
-            child: ResponsiveWidget(
-              largeScreen: InteractiveScrollViewer(
-                scrollToId: _scrollToId,
-                children: <ScrollContent>[
-                  ScrollContent(
-                      id: 'profile',
+          ResponsiveWidget(
+            largeScreen: InteractiveScrollViewer(
+              scrollToId: _scrollToId,
+              children: <ScrollContent>[
+                ScrollContent(
+                    id: 'profile',
+                    child: AnimatedPadding(
+                      padding: _animatedPadding(context),
+                      duration: _animatedPaddingDuration(),
                       child: Column(
                         children: [
                           SizedBox(
@@ -65,56 +66,71 @@ class _ProfileScreenState extends State<ProfileScreen> {
                           ProfileInfo(),
                           _space01(totalSize),
                         ],
-                      )),
-                  ScrollContent(
-                      id: 'about',
-                      child: Column(
-                        children: [
-                          _space01(totalSize),
-                          AboutMe(),
-                          _space01(totalSize),
-                        ],
-                      )),
-                  ScrollContent(
-                      id: 'skills',
-                      child: Column(
-                        children: [
-                          _space01(totalSize),
-                          MySkills(),
-                          _space01(totalSize),
-                        ],
-                      )),
-                  ScrollContent(
-                      id: 'resume',
-                      child: Column(
-                        children: [
-                          _space01(totalSize),
-                          Resume(),
-                          _space01(totalSize),
-                        ],
-                      )),
-                  ScrollContent(
-                      id: 'projects',
-                      child: Column(
-                        children: [
-                          _space01(totalSize),
-                          Projects(),
-                          _space01(totalSize),
-                        ],
-                      )),
-                  ScrollContent(
-                      id: 'drop_a_line',
-                      child: Column(
-                        children: [
-                          _space01(totalSize),
-                          DropALine(),
-                          _space01(totalSize),
-                          _space01(totalSize),
-                          SocialInfo(),
-                        ],
-                      ))
-                ],
-              ),
+                      ),
+                    )),
+                ScrollContent(
+                    id: 'about',
+                    child: AnimatedPadding(
+                        padding: _animatedPadding(context),
+                        duration: _animatedPaddingDuration(),
+                        child: Column(
+                          children: [
+                            _space01(totalSize),
+                            AboutMe(),
+                            _space01(totalSize),
+                          ],
+                        ))),
+                ScrollContent(
+                    id: 'skills',
+                    child: AnimatedPadding(
+                        padding: _animatedPadding(context),
+                        duration: _animatedPaddingDuration(),
+                        child: Column(
+                          children: [
+                            _space01(totalSize),
+                            MySkills(),
+                            _space01(totalSize),
+                          ],
+                        ))),
+                ScrollContent(
+                    id: 'resume',
+                    child: AnimatedPadding(
+                        padding: _animatedPadding(context),
+                        duration: _animatedPaddingDuration(),
+                        child: Column(
+                          children: [
+                            _space01(totalSize),
+                            Resume(),
+                            _space01(totalSize),
+                          ],
+                        ))),
+                ScrollContent(
+                    id: 'projects',
+                    child: AnimatedPadding(
+                        padding: _animatedPadding(context),
+                        duration: _animatedPaddingDuration(),
+                        child: Column(
+                          children: [
+                            _space01(totalSize),
+                            Projects(),
+                            _space01(totalSize),
+                          ],
+                        ))),
+                ScrollContent(
+                    id: 'drop_a_line',
+                    child: AnimatedPadding(
+                        padding: _animatedPadding(context),
+                        duration: _animatedPaddingDuration(),
+                        child: Column(
+                          children: [
+                            _space01(totalSize),
+                            DropALine(),
+                            _space01(totalSize),
+                            _space01(totalSize),
+                            SocialInfo(),
+                          ],
+                        )))
+              ],
             ),
           ),
           !ResponsiveWidget.isSmallScreen(context)
@@ -123,6 +139,30 @@ class _ProfileScreenState extends State<ProfileScreen> {
         ],
       ),
     ));
+  }
+
+  String _screenSize(BuildContext context) {
+    if (ResponsiveWidget.isSmallScreen(context)) {
+      return 'Small Screen';
+    } else if (ResponsiveWidget.isMediumScreen(context)) {
+      return 'MediumScreen';
+    } else {
+      return 'Large Screen';
+    }
+  }
+
+  Duration _animatedPaddingDuration() => Duration(milliseconds: 400);
+
+  EdgeInsets _animatedPadding(BuildContext context) {
+    final _totalSize = MediaQuery.of(context).size;
+    return EdgeInsets.only(
+      left: ResponsiveWidget.isSmallScreen(context)
+          ? _totalSize.width * 0.08
+          : _totalSize.width * 0.17,
+      right: ResponsiveWidget.isSmallScreen(context)
+          ? _totalSize.width * 0.08
+          : _totalSize.width * 0.14,
+    );
   }
 
   FloatingActionButton _floatingActionButton() {

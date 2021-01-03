@@ -59,7 +59,7 @@ class AboutMe extends StatelessWidget {
     );
   }
 
-  Text _smallIntro() {
+  Widget _smallIntro() {
     return Text(
       'I am an enthusiastic developer, having a ton of interest in product development and design. Also I am a strong believer that imagination brings the change and shows a path to develop something amazing and interesting.',
       style: GoogleFonts.poppins(
@@ -90,7 +90,7 @@ class AboutDetails extends StatelessWidget {
           color: Colors.transparent,
           width: ResponsiveWidget.isSmallScreen(context)
               ? totalSize.width * 0.6
-              : totalSize.width * 0.37,
+              :  totalSize.width * 0.4,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -208,7 +208,7 @@ class AboutDetails extends StatelessWidget {
             ),
             DetailsWidget(
               title: 'Email',
-              value: 'pratiksatishpawar@gmail.com',
+              value: 'pratikdaregoan@gmail.com',
             ),
             DetailsWidget(
               title: 'Freelance',
@@ -236,22 +236,24 @@ class DetailsWidget extends StatelessWidget {
           color: Palette.primaryColor,
           size: 16,
         ),
-        RichText(
-          text: TextSpan(
-              text: ' $title:  ',
-              style: GoogleFonts.poppins(
-                  fontSize: 16,
-                  fontWeight: FontWeight.bold,
-                  color: Palette.titleColor),
-              children: <TextSpan>[
-                TextSpan(
-                  text: value,
-                  style: GoogleFonts.poppins(
-                      fontWeight: FontWeight.w400,
-                      fontSize: 16,
-                      color: Palette.subTitleColor),
-                )
-              ]),
+        FittedBox(
+          child: RichText(
+            text: TextSpan(
+                text: ' $title:  ',
+                style: GoogleFonts.poppins(
+                    fontSize: 16,
+                    fontWeight: FontWeight.bold,
+                    color: Palette.titleColor),
+                children: <TextSpan>[
+                  TextSpan(
+                    text: value,
+                    style: GoogleFonts.poppins(
+                        fontWeight: FontWeight.w400,
+                        fontSize: 16,
+                        color: Palette.subTitleColor),
+                  )
+                ]),
+          ),
         )
       ],
     );

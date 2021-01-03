@@ -16,8 +16,42 @@ class ProjectCard extends StatefulWidget {
   _ProjectCardState createState() => _ProjectCardState();
 }
 
-class _ProjectCardState extends State<ProjectCard> {
+class _ProjectCardState extends State<ProjectCard>
+    with SingleTickerProviderStateMixin {
   bool isHover = false;
+
+  AnimationController _animationController;
+  Animation _curve;
+  Animation _widthAnimation;
+  Animation _heightAnimation;
+  Animation _opacity;
+
+  @override
+  void initState() {
+    super.initState();
+  }
+
+  @override
+  void didChangeDependencies() {
+    var _totalSize = MediaQuery.of(context).size;
+    _animationController =
+        AnimationController(vsync: this, duration: Duration(milliseconds: 500));
+    _curve = CurvedAnimation(curve: Curves.ease, parent: _animationController);
+    _widthAnimation = Tween<double>(
+            begin: 190,
+            end: ResponsiveWidget.isLargeScreen(context)
+                ? _totalSize.width * 0.5
+                : _totalSize.width)
+        .animate(_curve);
+    _heightAnimation = Tween<double>(
+            begin: 108,
+            end: ResponsiveWidget.isLargeScreen(context)
+                ? _totalSize.height * 0.5
+                : _totalSize.height)
+        .animate(_curve);
+    _opacity = Tween<double>(begin: 0, end: 1).animate(_curve);
+    super.didChangeDependencies();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -31,7 +65,7 @@ class _ProjectCardState extends State<ProjectCard> {
             ? BoxShadow(
                 color: Colors.black26,
                 blurRadius: 5,
-                offset: Offset(2, 3),
+                offset: Offset(5, 7),
                 spreadRadius: 1)
             : BoxShadow(
                 color: Colors.white,
@@ -46,10 +80,12 @@ class _ProjectCardState extends State<ProjectCard> {
             setState(() {
               isHover = true;
             });
+            _animationController.forward();
           } else {
             setState(() {
               isHover = false;
             });
+            _animationController.reverse();
           }
         },
         child: Stack(
@@ -61,45 +97,67 @@ class _ProjectCardState extends State<ProjectCard> {
               fit: BoxFit.cover,
             ),
             isHover
-                ? Container(
-                    height: totalSize.height,
-                    width: totalSize.width,
-                    alignment: Alignment.center,
-                    decoration: BoxDecoration(color: Colors.white70),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text(
-                          widget.project.projectName.toUpperCase(),
-                          style: GoogleFonts.mukta(
-                              fontSize: 22,
-                              fontWeight: FontWeight.w700,
-                              color: Palette.primaryColor),
-                        ),
-                        Container(
-                          height: 30,
-                          child: ListView.builder(
-                            physics: NeverScrollableScrollPhysics(),
-                            shrinkWrap: true,
-                            scrollDirection: Axis.horizontal,
-                            itemCount: widget.project.tags.length,
-                            itemBuilder: (context, index) {
-                              return Text(
-                                "  ${widget.project.tags[index].toUpperCase()}  ",
-                                style: GoogleFonts.mukta(
-                                    fontSize: 18,
-                                    fontWeight: FontWeight.w500,
-                                    color: Palette.titleColor),
-                              );
-                            },
-                          ),
-                        )
-                      ],
+                ? Positioned.fill(
+                    child: Align(
+                      alignment: Alignment.center,
+                      child: AnimatedBuilder(
+                          animation: _animationController,
+                          builder: (context, child) {
+                            return Opacity(
+                              opacity: _opacity.value,
+                              child: _stackContainer(),
+                            );
+                          }),
                     ),
                   )
                 : Container()
           ],
         ),
+      ),
+    );
+  }
+
+  Container _stackContainer() {
+    return Container(
+      height: _heightAnimation.value,
+      width: _widthAnimation.value,
+      alignment: Alignment.center,
+      decoration: BoxDecoration(
+          color: Colors.white70,
+          image: DecorationImage(image: AssetImage('frame.png'))),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          FittedBox(
+            child: Text(
+              widget.project.projectName.toUpperCase(),
+              style: GoogleFonts.mukta(
+                  fontSize: 22,
+                  fontWeight: FontWeight.w700,
+                  color: Palette.primaryColor),
+            ),
+          ),
+          Container(
+            height: 30,
+            child: ListView.builder(
+              physics: NeverScrollableScrollPhysics(),
+              shrinkWrap: true,
+              scrollDirection: Axis.horizontal,
+              itemCount: widget.project.tags.length,
+              itemBuilder: (context, index) {
+                return FittedBox(
+                  child: Text(
+                    "  ${widget.project.tags[index].toUpperCase()}  ",
+                    style: GoogleFonts.mukta(
+                        fontSize: 18,
+                        fontWeight: FontWeight.w500,
+                        color: Palette.titleColor),
+                  ),
+                );
+              },
+            ),
+          )
+        ],
       ),
     );
   }
