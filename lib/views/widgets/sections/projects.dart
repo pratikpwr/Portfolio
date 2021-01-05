@@ -32,16 +32,13 @@ class Projects extends StatelessWidget {
         ),
         ResponsiveWidget(
             largeScreen: Container(
-                width: MediaQuery
-                    .of(context)
-                    .size
-                    .width * 0.7,
+                width: MediaQuery.of(context).size.width * 0.7,
                 child: GridView.builder(
                   physics: NeverScrollableScrollPhysics(),
                   shrinkWrap: true,
                   gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                       crossAxisCount:
-                      !ResponsiveWidget.isLargeScreen(context) ? 1 : 2,
+                          !ResponsiveWidget.isLargeScreen(context) ? 1 : 2,
                       crossAxisSpacing: 25,
                       mainAxisSpacing: 15,
                       childAspectRatio: 1.8),
@@ -54,7 +51,7 @@ class Projects extends StatelessWidget {
     );
   }
 
-  Text _smallIntro() {
+  Widget _smallIntro() {
     return Text(
       'Here are some of my Projects',
       style: GoogleFonts.poppins(

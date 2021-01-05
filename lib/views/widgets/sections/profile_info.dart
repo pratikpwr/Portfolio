@@ -1,11 +1,9 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:portfolio/palette.dart';
 import 'package:portfolio/views/widgets/responsive_handler_widget.dart';
 import 'package:portfolio/views/widgets/buttons/social_button.dart';
-import 'package:social_media_buttons/social_media_buttons.dart';
 
 class ProfileInfo extends StatelessWidget {
   @override
@@ -96,21 +94,21 @@ class Intro extends StatelessWidget {
           children: [
             SocialButton(
               url: 'https://www.github.com/pratikpwr',
-              icon: SocialMediaIcons.github_circled,
+              iconUrl: 'github.png',
             ),
             SizedBox(
               width: 10,
             ),
             SocialButton(
               url: 'https://www.linkedin.com/in/pratikpwr/',
-              icon: SocialMediaIcons.linkedin_squared,
+              iconUrl: 'linkedin.png',
             ),
             SizedBox(
               width: 10,
             ),
             SocialButton(
               url: 'https://www.instagram.com/_.pratikpawar._/',
-              icon: SocialMediaIcons.instagram,
+              iconUrl: 'insta.png',
             ),
           ],
         ),

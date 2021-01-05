@@ -1,14 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/palette.dart';
-import 'dart:io';
-import 'package:universal_html/html.dart' as html;
-import 'package:url_launcher/url_launcher.dart';
+import 'package:portfolio/views/widgets/shared_methods.dart';
 
 class SocialButton extends StatefulWidget {
-  final IconData icon;
+  final String iconUrl;
   final String url;
 
-  const SocialButton({@required this.icon, @required this.url});
+  const SocialButton({@required this.iconUrl, @required this.url});
 
   @override
   _SocialButtonState createState() => _SocialButtonState();
@@ -21,19 +19,7 @@ class _SocialButtonState extends State<SocialButton> {
   Widget build(BuildContext context) {
     return InkWell(
         onTap: () {
-          if (widget.url != null) {
-            try {
-              if (Platform.isIOS || Platform.isAndroid) {
-                _launchURLInMobile(widget.url);
-              } else {
-                _launchURLInWeb(widget.url);
-              }
-            } catch (e) {
-              print(e);
-              _launchURLInWeb(widget.url);
-            }
-            return;
-          }
+          SharedMethods().launchUrl(url: widget.url);
         },
         onHover: (isHovered) {
           if (isHovered) {
@@ -46,22 +32,11 @@ class _SocialButtonState extends State<SocialButton> {
             });
           }
         },
-        child: Icon(
-          widget.icon,
-          size: 22,
+        child: Image.asset(
+          widget.iconUrl,
+          height: 22,
+          width: 22,
           color: iconColor,
         ));
-  }
-
-  _launchURLInMobile(String url) async {
-    if (await canLaunch(url)) {
-      await launch(url);
-    } else {
-      throw 'Could not launch $url';
-    }
-  }
-
-  void _launchURLInWeb(String url) {
-    html.window.open(url, '');
   }
 }

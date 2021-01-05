@@ -176,7 +176,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
     );
   }
 
-  SizedBox _space01(Size totalSize) {
+  Widget _space01(Size totalSize) {
     return SizedBox(
       height: totalSize.height * 0.1,
     );
