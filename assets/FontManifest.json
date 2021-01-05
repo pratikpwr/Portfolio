@@ -8,6 +8,14 @@
     ]
   },
   {
+    "family": "MaterialIcons",
+    "fonts": [
+      {
+        "asset": "MaterialIcons-Extended.ttf"
+      }
+    ]
+  },
+  {
     "family": "GoogleSansRegular",
     "fonts": [
       {
