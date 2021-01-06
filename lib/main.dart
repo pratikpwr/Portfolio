@@ -6,14 +6,17 @@ void main() {
   return runApp(MyApp());
 }
 
+// flutter pub global run peanut:peanut
+// git push origin --set-upstream gh-pages
+
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'PortFolio',
       theme: ThemeData(
-        brightness: Brightness.light,
-        scaffoldBackgroundColor: Colors.white,
+        // brightness: Brightness.dark,
+        scaffoldBackgroundColor: Palette.canvasColor,
         primaryColor: Palette.primaryColor,
         fontFamily: "GoogleSansRegular",
       ),

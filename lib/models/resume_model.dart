@@ -53,18 +53,18 @@ class ResumeData {
         period: 'September 2020 - March 2021',
         company: 'ISOLS Group, Gurgaon',
         details: [
-          'Developed Flutter Apps required by clients',
-          'Completed all the projets before Deadline',
-          'Deployed Apps to PlayStore and Apple App Store'
+          '   - Developed Flutter Apps required by clients\n'
+          '   - Completed all the projets before Deadline\n'
+          '   - Deployed Apps to PlayStore and Apple App Store'
         ]),
     ExperienceModel(
         designation: 'JR. FLUTTER DEVELOPER (INTERN)',
         period: 'July 2020 - September 2020',
         company: 'Tvish E-Commerce, Bangalore',
         details: [
-          'Developed E-commerce Flutter App.',
-          'Solved Bugs and Errors in App and Added new Features',
-          'Worked with the team'
+          '   - Developed E-commerce Flutter App.\n'
+          '   - Solved Bugs and Errors in App and Added new Features\n'
+          '   - Worked with the team'
         ])
   ];
 

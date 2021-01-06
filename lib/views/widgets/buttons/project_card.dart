@@ -136,6 +136,10 @@ class _ProjectCardState extends State<ProjectCard>
                 Container(
                   height: MediaQuery.of(context).size.height * 0.85,
                   width: MediaQuery.of(context).size.width * 0.7,
+                  decoration: BoxDecoration(
+                    color: Palette.canvasColor,
+                    borderRadius: BorderRadius.circular(15),
+                  ),
                   padding: EdgeInsets.all(18),
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -180,7 +184,7 @@ class _ProjectCardState extends State<ProjectCard>
                             SizedBox(
                               height: 6,
                             ),
-                            Text(
+                            SelectableText(
                               widget.project.desc,
                               textAlign: TextAlign.center,
                               style: GoogleFonts.mukta(
@@ -196,6 +200,7 @@ class _ProjectCardState extends State<ProjectCard>
                   child: IconButton(
                     icon: Icon(
                       Icons.close_rounded,
+                      color: Palette.titleColor,
                     ),
                     onPressed: () {
                       Navigator.pop(context);
@@ -225,14 +230,14 @@ class _ProjectCardState extends State<ProjectCard>
               'github.png',
               height: 18,
               width: 18,
+              color: Palette.titleColor,
             ),
             SizedBox(
               width: 16,
             ),
             Text(
               'View Code',
-              style:
-                  GoogleFonts.mukta(fontSize: 18, color: Palette.titleColor),
+              style: GoogleFonts.mukta(fontSize: 18, color: Palette.titleColor),
             )
           ],
         ),
