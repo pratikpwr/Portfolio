@@ -31,7 +31,7 @@ class MySkills extends StatelessWidget {
         ),
         HeadingUnderline(),
         SizedBox(
-          height: 32,
+          height: 40,
         ),
         ResponsiveWidget(
             smallScreen: Container(

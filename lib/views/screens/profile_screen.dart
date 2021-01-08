@@ -9,7 +9,7 @@ import 'package:portfolio/views/widgets/sections/profile_info.dart';
 import 'package:portfolio/views/widgets/responsive_handler_widget.dart';
 import 'package:portfolio/views/widgets/sections/projects.dart';
 import 'package:portfolio/views/widgets/sections/resume.dart';
-import 'package:portfolio/views/widgets/sections/social_info.dart';
+import 'package:portfolio/views/widgets/sections/footer.dart';
 import 'package:scroll_to_id/scroll_to_id.dart';
 
 class ProfileScreen extends StatefulWidget {
@@ -126,10 +126,13 @@ class _ProfileScreenState extends State<ProfileScreen> {
                             _space01(totalSize),
                             DropALine(),
                             _space01(totalSize),
-                            _space01(totalSize),
-                            SocialInfo(),
+                            // SocialInfo(),
                           ],
-                        )))
+                        ))),
+                ScrollContent(
+                    //SocialInfo()
+                    id: 'footer',
+                    child: Footer())
               ],
             ),
           ),

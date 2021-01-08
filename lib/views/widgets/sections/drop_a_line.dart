@@ -1,6 +1,8 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:portfolio/palette.dart';
 import 'package:portfolio/views/widgets/PictureIllustration.dart';
+import 'package:portfolio/views/widgets/buttons/custom_button.dart';
 import 'package:portfolio/views/widgets/heading_underline.dart';
 import 'package:portfolio/views/widgets/responsive_handler_widget.dart';
 import 'package:portfolio/views/widgets/rich_text_heading.dart';
@@ -137,7 +139,8 @@ class ContactForm extends StatelessWidget {
                   hintText: 'Type Your Message',
                   hintStyle: TextStyle(color: Palette.subTitleColor)),
             ),
-          )
+          ),
+          Container(margin:EdgeInsets.symmetric(horizontal: 8, vertical: 8),child: CustomButton(text: 'Message', onTap: () {}))
         ],
       ),
     );
