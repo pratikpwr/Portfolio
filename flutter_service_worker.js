@@ -44,12 +44,13 @@ const RESOURCES = {
 "assets/undraw_developer_activity_bv83.svg": "59389695208d7454c6607bed51ed4316",
 "assets/undraw_my_app_grf2.svg": "746113785152543ca7001d2d134a38a8",
 "assets/undraw_progressive_app_m9ms%20(2).svg": "93b50dae99302df619ea8767dc332d88",
+"assets/verticalLine.png": "7137279aa8975703f3955cf39ae00a85",
 "favicon.png": "5dcef449791fa27946b3d35ad8803796",
 "icons/Icon-192.png": "ac9a721a12bbc803b44f645561ecb1e1",
 "icons/Icon-512.png": "96e752610906ba2a93c65f8abe1645f1",
-"index.html": "98ba1ecc6e6101e530207cb139056f33",
-"/": "98ba1ecc6e6101e530207cb139056f33",
-"main.dart.js": "e813cd24e5b702865d3455c175cbb67f",
+"index.html": "0c993cac45b4d1f566ef49e492a06ea1",
+"/": "0c993cac45b4d1f566ef49e492a06ea1",
+"main.dart.js": "4608a30d6d4863e02c9a23f240ee0213",
 "manifest.json": "499b519cb5cbed3c5dc70a8d67208a32",
 "version.json": "426313f2f3133c2f20415344c4a22df3"
 };
