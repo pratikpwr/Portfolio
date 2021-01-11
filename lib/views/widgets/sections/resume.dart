@@ -96,7 +96,7 @@ class Resume extends StatelessWidget {
             Text(
               _education.degree,
               style: GoogleFonts.poppins(
-                  fontSize: 20,
+                  fontSize: 19,
                   color: Palette.primaryColor,
                   fontWeight: FontWeight.w600),
             ),
@@ -113,12 +113,12 @@ class Resume extends StatelessWidget {
             Text(
               _education.institute,
               style: GoogleFonts.mukta(
-                  fontSize: 18, color: Palette.subTitleColor),
+                  fontSize: 17, color: Palette.subTitleColor),
             ),
             Text(
               'Grade: ${_education.grades}',
               style: GoogleFonts.mukta(
-                  fontSize: 18, color: Palette.subTitleColor),
+                  fontSize: 17, color: Palette.subTitleColor),
             ),
           ],
         );
@@ -172,7 +172,7 @@ class Resume extends StatelessWidget {
         Text(
           _experience.designation,
           style: GoogleFonts.poppins(
-              fontSize: 20,
+              fontSize: 19,
               color: Palette.primaryColor,
               fontWeight: FontWeight.w600),
         ),
@@ -189,12 +189,12 @@ class Resume extends StatelessWidget {
         Text(
           _experience.company,
           style: GoogleFonts.mukta(
-              fontSize: 18, color: Palette.subTitleColor),
+              fontSize: 17, color: Palette.subTitleColor),
         ),
         Text(
           '${_experience.details[0]}',
           style: GoogleFonts.mukta(
-              fontSize: 18, color: Palette.subTitleColor),
+              fontSize: 17, color: Palette.subTitleColor),
         ),
       ],
     );

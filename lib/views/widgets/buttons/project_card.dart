@@ -147,8 +147,7 @@ class _ProjectCardState extends State<ProjectCard>
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          _iconButton(
-                              icon: Icons.arrow_back_ios_rounded, onTap: () {}),
+                          _iconButton(icon: 'icons8-back-48.png', onTap: () {}),
                           Hero(
                             tag: widget.project.url,
                             child: Image.asset(
@@ -159,8 +158,7 @@ class _ProjectCardState extends State<ProjectCard>
                             ),
                           ),
                           _iconButton(
-                              icon: Icons.arrow_forward_ios_rounded,
-                              onTap: () {}),
+                              icon: 'icons8-forward-48.png', onTap: () {}),
                         ],
                       ),
                       Column(
@@ -198,9 +196,12 @@ class _ProjectCardState extends State<ProjectCard>
                   right: 16,
                   top: 16,
                   child: IconButton(
-                    icon: Icon(
-                      Icons.close_rounded,
+                    icon: Image.asset(
+                      'cancel.png',
+                      // 'icons8-x-48.png',
                       color: Palette.titleColor,
+                      height: 20,
+                      width: 20,
                     ),
                     onPressed: () {
                       Navigator.pop(context);
@@ -245,14 +246,16 @@ class _ProjectCardState extends State<ProjectCard>
     );
   }
 
-  InkWell _iconButton({IconData icon, Function onTap}) {
+  InkWell _iconButton({String icon, Function onTap}) {
     return InkWell(
       onTap: onTap,
       child: Container(
         padding: EdgeInsets.all(8),
-        child: Icon(
+        child: Image.asset(
           icon,
           color: Colors.white,
+          height: 32,
+          width: 32,
         ),
         decoration:
             BoxDecoration(color: Palette.primaryColor, shape: BoxShape.circle),

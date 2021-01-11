@@ -1,5 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:scroll_to_id/scroll_to_id.dart';
 import 'package:portfolio/palette.dart';
 import 'package:portfolio/views/widgets/sections/about_info.dart';
 import 'package:portfolio/views/widgets/sections/drop_a_line.dart';
@@ -10,7 +11,6 @@ import 'package:portfolio/views/widgets/responsive_handler_widget.dart';
 import 'package:portfolio/views/widgets/sections/projects.dart';
 import 'package:portfolio/views/widgets/sections/resume.dart';
 import 'package:portfolio/views/widgets/sections/footer.dart';
-import 'package:scroll_to_id/scroll_to_id.dart';
 
 class ProfileScreen extends StatefulWidget {
   @override
@@ -40,6 +40,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
     return ResponsiveWidget(
         largeScreen: Scaffold(
       key: _scaffoldKey,
+      backgroundColor: Palette.canvasColor,
       // floatingActionButton: _floatingActionButton(),
       body: Stack(
         children: [
@@ -126,13 +127,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
                             _space01(totalSize),
                             DropALine(),
                             _space01(totalSize),
-                            // SocialInfo(),
                           ],
                         ))),
-                ScrollContent(
-                    //SocialInfo()
-                    id: 'footer',
-                    child: Footer())
+                ScrollContent(id: 'footer', child: Footer())
               ],
             ),
           ),
@@ -194,7 +191,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
         children: [
           NavButton(
             text: 'Home',
-            icon: Icons.home_outlined,
+            icon: 'icons8-home-48.png',
             onTap: () {
               _scrollToId.animateTo('profile',
                   duration: Duration(milliseconds: 500), curve: Curves.easeIn);
@@ -202,7 +199,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
           ),
           NavButton(
             text: 'About',
-            icon: Icons.person_outline_rounded,
+            icon: 'profile.png',
             onTap: () {
               _scrollToId.animateTo('about',
                   duration: Duration(milliseconds: 500), curve: Curves.easeIn);
@@ -210,7 +207,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
           ),
           NavButton(
             text: 'Resume',
-            icon: Icons.insert_drive_file_outlined,
+            icon: 'cv.png',
             onTap: () {
               _scrollToId.animateTo('resume',
                   duration: Duration(milliseconds: 500), curve: Curves.easeIn);
@@ -218,7 +215,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
           ),
           NavButton(
             text: 'Projects',
-            icon: Icons.work_outline_rounded,
+            icon: 'idea.png',
             onTap: () {
               _scrollToId.animateTo('projects',
                   duration: Duration(milliseconds: 500), curve: Curves.easeIn);
@@ -226,7 +223,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
           ),
           NavButton(
             text: 'Contact',
-            icon: Icons.mail_outline_rounded,
+            icon: 'envelope.png',
             onTap: () {
               _scrollToId.animateTo('drop_a_line',
                   duration: Duration(milliseconds: 500), curve: Curves.easeIn);

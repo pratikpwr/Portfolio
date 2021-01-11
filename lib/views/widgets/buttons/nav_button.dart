@@ -3,7 +3,7 @@ import 'package:portfolio/palette.dart';
 
 class NavButton extends StatefulWidget {
   final String text;
-  final IconData icon;
+  final String icon;
   final Function onTap;
 
   NavButton({@required this.text, @required this.icon, @required this.onTap});
@@ -52,9 +52,10 @@ class _NavButtonState extends State<NavButton> {
           child: isExpanded
               ? Row(
                   children: [
-                    Icon(
+                    Image.asset(
                       widget.icon,
-                      size: 22,
+                      height: 22,
+                      width: 22,
                       color: iconColor,
                     ),
                     SizedBox(
@@ -66,9 +67,10 @@ class _NavButtonState extends State<NavButton> {
                     )
                   ],
                 )
-              : Icon(
+              : Image.asset(
                   widget.icon,
-                  size: 22,
+                  height: 22,
+                  width: 22,
                   color: iconColor,
                 ),
         ),

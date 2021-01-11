@@ -231,10 +231,11 @@ class DetailsWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        Icon(
-          Icons.arrow_forward_ios_rounded,
+        Image.asset(
+          'icons8-forward-48.png',
           color: Palette.primaryColor,
-          size: 16,
+          height: 16,
+          width: 16,
         ),
         FittedBox(
           child: RichText(
