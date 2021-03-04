@@ -48,89 +48,91 @@ class _ProfileScreenState extends State<ProfileScreen> {
             Text(
               _screenSize(context),
             ),
-          ResponsiveWidget(
-            largeScreen: InteractiveScrollViewer(
-              scrollToId: _scrollToId,
-              children: <ScrollContent>[
-                ScrollContent(
-                    id: 'profile',
-                    child: AnimatedPadding(
-                      padding: _animatedPadding(context),
-                      duration: _animatedPaddingDuration(),
-                      child: Column(
-                        children: [
-                          SizedBox(
-                            height: ResponsiveWidget.isSmallScreen(context)
-                                ? totalSize.height * 0.05
-                                : totalSize.height * 0.2,
-                          ),
-                          ProfileInfo(),
-                          _space01(totalSize),
-                        ],
-                      ),
-                    )),
-                ScrollContent(
-                    id: 'about',
-                    child: AnimatedPadding(
+          Scrollbar(
+            child: ResponsiveWidget(
+              largeScreen: InteractiveScrollViewer(
+                scrollToId: _scrollToId,
+                children: <ScrollContent>[
+                  ScrollContent(
+                      id: 'profile',
+                      child: AnimatedPadding(
                         padding: _animatedPadding(context),
                         duration: _animatedPaddingDuration(),
                         child: Column(
                           children: [
-                            _space01(totalSize),
-                            AboutMe(),
-                            _space01(totalSize),
-                          ],
-                        ))),
-                ScrollContent(
-                    id: 'skills',
-                    child: AnimatedPadding(
-                        padding: _animatedPadding(context),
-                        duration: _animatedPaddingDuration(),
-                        child: Column(
-                          children: [
-                            _space01(totalSize),
-                            MySkills(),
+                            SizedBox(
+                              height: ResponsiveWidget.isSmallScreen(context)
+                                  ? totalSize.height * 0.05
+                                  : totalSize.height * 0.2,
+                            ),
+                            ProfileInfo(),
                             _space01(totalSize),
                           ],
-                        ))),
-                ScrollContent(
-                    id: 'resume',
-                    child: AnimatedPadding(
-                        padding: _animatedPadding(context),
-                        duration: _animatedPaddingDuration(),
-                        child: Column(
-                          children: [
-                            _space01(totalSize),
-                            Resume(),
-                            _space01(totalSize),
-                          ],
-                        ))),
-                ScrollContent(
-                    id: 'projects',
-                    child: AnimatedPadding(
-                        padding: _animatedPadding(context),
-                        duration: _animatedPaddingDuration(),
-                        child: Column(
-                          children: [
-                            _space01(totalSize),
-                            Projects(),
-                            _space01(totalSize),
-                          ],
-                        ))),
-                ScrollContent(
-                    id: 'drop_a_line',
-                    child: AnimatedPadding(
-                        padding: _animatedPadding(context),
-                        duration: _animatedPaddingDuration(),
-                        child: Column(
-                          children: [
-                            _space01(totalSize),
-                            DropALine(),
-                            _space01(totalSize),
-                          ],
-                        ))),
-                ScrollContent(id: 'footer', child: Footer())
-              ],
+                        ),
+                      )),
+                  ScrollContent(
+                      id: 'about',
+                      child: AnimatedPadding(
+                          padding: _animatedPadding(context),
+                          duration: _animatedPaddingDuration(),
+                          child: Column(
+                            children: [
+                              _space01(totalSize),
+                              AboutMe(),
+                              _space01(totalSize),
+                            ],
+                          ))),
+                  ScrollContent(
+                      id: 'skills',
+                      child: AnimatedPadding(
+                          padding: _animatedPadding(context),
+                          duration: _animatedPaddingDuration(),
+                          child: Column(
+                            children: [
+                              _space01(totalSize),
+                              MySkills(),
+                              _space01(totalSize),
+                            ],
+                          ))),
+                  ScrollContent(
+                      id: 'resume',
+                      child: AnimatedPadding(
+                          padding: _animatedPadding(context),
+                          duration: _animatedPaddingDuration(),
+                          child: Column(
+                            children: [
+                              _space01(totalSize),
+                              Resume(),
+                              _space01(totalSize),
+                            ],
+                          ))),
+                  ScrollContent(
+                      id: 'projects',
+                      child: AnimatedPadding(
+                          padding: _animatedPadding(context),
+                          duration: _animatedPaddingDuration(),
+                          child: Column(
+                            children: [
+                              _space01(totalSize),
+                              Projects(),
+                              _space01(totalSize),
+                            ],
+                          ))),
+                  ScrollContent(
+                      id: 'drop_a_line',
+                      child: AnimatedPadding(
+                          padding: _animatedPadding(context),
+                          duration: _animatedPaddingDuration(),
+                          child: Column(
+                            children: [
+                              _space01(totalSize),
+                              DropALine(),
+                              _space01(totalSize),
+                            ],
+                          ))),
+                  ScrollContent(id: 'footer', child: Footer())
+                ],
+              ),
             ),
           ),
           !ResponsiveWidget.isSmallScreen(context)

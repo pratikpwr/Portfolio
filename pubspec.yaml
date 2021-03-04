@@ -14,12 +14,12 @@ dependencies:
 
 
   cupertino_icons: ^1.0.2
-  google_fonts: ^1.1.1
+  google_fonts: ^1.1.2
   scroll_to_id: ^1.4.0
-  animated_text_kit: ^3.1.0
+  animated_text_kit: ^3.1.2
   flutter_animation_progress_bar: ^1.0.6
   social_media_buttons: ^0.1.2
-  carousel_slider: ^2.3.1
+  carousel_slider: ^3.0.0
 
 dev_dependencies:
   flutter_test:
