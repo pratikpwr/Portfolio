@@ -41,7 +41,7 @@ const RESOURCES = {
 "assets/MaterialIcons-Regular.ttf": "8ef52a15e44481b41e7db3c7eaf9bb83",
 "assets/musicUI.png": "9c5c3bcae741be110bc1248379d1f93a",
 "assets/myPortfolio.png": "e45b872bd1770ce994bc1b303d867d35",
-"assets/NOTICES": "9e9b3423559b3b2d282e7439b15fca5e",
+"assets/NOTICES": "da613999a81f817190fc04bc5ad6bfc6",
 "assets/Nrityosava.png": "50c4867061c1fdae0b475444c65dc60d",
 "assets/packages/cupertino_icons/assets/CupertinoIcons.ttf": "6d342eb68f170c97609e9da345464e5e",
 "assets/packages/social_media_buttons/fonts/SocialMediaIcons.ttf": "6483bf9fdd106eb77d6f3c04dfe35057",
@@ -66,9 +66,9 @@ const RESOURCES = {
 "favicon.png": "14d138606e1825524893c14af9f167e3",
 "icons/Icon-192.png": "ac9a721a12bbc803b44f645561ecb1e1",
 "icons/Icon-512.png": "96e752610906ba2a93c65f8abe1645f1",
-"index.html": "c2f85749e5e3fb0629a01111f37b4cdc",
-"/": "c2f85749e5e3fb0629a01111f37b4cdc",
-"main.dart.js": "178b400c6ddfd106ecdea77d76f702b4",
+"index.html": "81a75e2ab51f954d881e62746fcffe63",
+"/": "81a75e2ab51f954d881e62746fcffe63",
+"main.dart.js": "0cc9c2029109f71ed1032cb14a3e0b4e",
 "manifest.json": "499b519cb5cbed3c5dc70a8d67208a32",
 "version.json": "426313f2f3133c2f20415344c4a22df3"
 };
@@ -214,7 +214,7 @@ async function downloadOffline() {
     }
     currentContent[key] = true;
   }
-  for (var resourceKey in Object.keys(RESOURCES)) {
+  for (var resourceKey of Object.keys(RESOURCES)) {
     if (!currentContent[resourceKey]) {
       resources.push(resourceKey);
     }
