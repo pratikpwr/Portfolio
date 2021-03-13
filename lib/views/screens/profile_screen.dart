@@ -62,7 +62,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                           children: [
                             SizedBox(
                               height: ResponsiveWidget.isSmallScreen(context)
-                                  ? totalSize.height * 0.05
+                                  ? totalSize.height * 0.1
                                   : totalSize.height * 0.2,
                             ),
                             ProfileInfo(),

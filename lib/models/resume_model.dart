@@ -49,13 +49,22 @@ class ResumeData {
 
   List<ExperienceModel> experiences = [
     ExperienceModel(
+        designation: 'SOFTWARE DEVELOPER',
+        period: 'January 2021 - April 2021',
+        company: 'DreamCare Developers, Pune',
+        details: [
+          '   - Developed Homeaxis Nearme App\n'
+              '   - Worked on NodeJs Bakend of Project\n'
+              '   - Worked on Flutter Web of project'
+        ]),
+    ExperienceModel(
         designation: 'FLUTTER APP DEVELOPER',
         period: 'September 2020 - March 2021',
         company: 'ISOLS Group, Gurgaon',
         details: [
           '   - Developed Flutter Apps required by clients\n'
-          '   - Completed all the projets before Deadline\n'
-          '   - Deployed Apps to PlayStore and Apple App Store'
+              '   - Completed all the projets before Deadline\n'
+              '   - Deployed Apps to PlayStore and Apple App Store'
         ]),
     ExperienceModel(
         designation: 'JR. FLUTTER DEVELOPER (INTERN)',
@@ -63,8 +72,8 @@ class ResumeData {
         company: 'Tvish E-Commerce, Bangalore',
         details: [
           '   - Developed E-commerce Flutter App.\n'
-          '   - Solved Bugs and Errors in App and Added new Features\n'
-          '   - Worked with the team'
+              '   - Solved Bugs and Errors in App and Added new Features\n'
+              '   - Worked with the team'
         ])
   ];
 

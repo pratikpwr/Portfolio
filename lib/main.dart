@@ -8,9 +8,9 @@ void main() {
   return runApp(MyApp());
 }
 
+// flutter pub global activate peanut
 // flutter pub global run peanut:peanut
 // git push origin --set-upstream gh-pages
-
 
 class MyApp extends StatelessWidget {
   @override

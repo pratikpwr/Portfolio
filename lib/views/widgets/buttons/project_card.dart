@@ -133,44 +133,34 @@ class _ProjectCardState extends State<ProjectCard>
             backgroundColor: Colors.white,
             child: Stack(
               children: [
-                Container(
-                  height: MediaQuery.of(context).size.height * 0.85,
-                  width: MediaQuery.of(context).size.width * 0.7,
-                  decoration: BoxDecoration(
-                    color: Palette.canvasColor,
-                    borderRadius: BorderRadius.circular(15),
-                  ),
-                  padding: EdgeInsets.all(18),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          _iconButton(icon: 'icons8-back-48.png', onTap: () {}),
-                          Hero(
-                            tag: widget.project.url,
-                            child: Image.asset(
-                              widget.project.imageUrl[0],
-                              height: MediaQuery.of(context).size.height * 0.45,
-                              width: MediaQuery.of(context).size.width * 0.45,
-                              fit: BoxFit.fitHeight,
-                            ),
-                          ),
-                          _iconButton(
-                              icon: 'icons8-forward-48.png', onTap: () {}),
-                        ],
-                      ),
-                      Column(
+                ResponsiveWidget.isSmallScreen(context)
+                    ? Container(
+                        height: MediaQuery.of(context).size.height * 0.7,
+                        width: MediaQuery.of(context).size.width * 0.98,
+                        decoration: BoxDecoration(
+                          color: Palette.canvasColor,
+                          borderRadius: BorderRadius.circular(15),
+                        ),
+                        padding: EdgeInsets.all(8),
+                        child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             SizedBox(
                               height: 6,
                             ),
+                            Hero(
+                              tag: widget.project.url,
+                              child: Image.asset(
+                                widget.project.imageUrl[0],
+                                height:
+                                    MediaQuery.of(context).size.height * 0.2,
+                                width: MediaQuery.of(context).size.width * 0.8,
+                              ),
+                            ),
                             Text(
                               widget.project.projectName.toUpperCase(),
                               style: GoogleFonts.mukta(
-                                  fontSize: 28,
+                                  fontSize: 22,
                                   color: Palette.titleColor,
                                   fontWeight: FontWeight.bold),
                             ),
@@ -182,26 +172,91 @@ class _ProjectCardState extends State<ProjectCard>
                             SizedBox(
                               height: 6,
                             ),
-                            SelectableText(
+                            Text(
                               widget.project.desc,
                               textAlign: TextAlign.center,
+                              maxLines: 10,
+                              overflow: TextOverflow.ellipsis,
                               style: GoogleFonts.mukta(
-                                  fontSize: 18, color: Palette.subTitleColor),
+                                  fontSize: 16, color: Palette.subTitleColor),
                             ),
-                          ])
-                    ],
-                  ),
-                ),
+                          ],
+                        ),
+                      )
+                    : Container(
+                        height: MediaQuery.of(context).size.height * 0.85,
+                        width: MediaQuery.of(context).size.width * 0.7,
+                        decoration: BoxDecoration(
+                          color: Palette.canvasColor,
+                          borderRadius: BorderRadius.circular(15),
+                        ),
+                        padding: EdgeInsets.all(18),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                _iconButton(
+                                    icon: 'icons8-back-48.png', onTap: () {}),
+                                Hero(
+                                  tag: widget.project.url,
+                                  child: Image.asset(
+                                    widget.project.imageUrl[0],
+                                    height: MediaQuery.of(context).size.height *
+                                        0.45,
+                                    width: MediaQuery.of(context).size.width *
+                                        0.45,
+                                    fit: BoxFit.fitHeight,
+                                  ),
+                                ),
+                                _iconButton(
+                                    icon: 'icons8-forward-48.png',
+                                    onTap: () {}),
+                              ],
+                            ),
+                            Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  SizedBox(
+                                    height: 6,
+                                  ),
+                                  Text(
+                                    widget.project.projectName.toUpperCase(),
+                                    style: GoogleFonts.mukta(
+                                        fontSize: 28,
+                                        color: Palette.titleColor,
+                                        fontWeight: FontWeight.bold),
+                                  ),
+                                  _tags(color: Palette.primaryColor),
+                                  SizedBox(
+                                    height: 6,
+                                  ),
+                                  githubButton(),
+                                  SizedBox(
+                                    height: 6,
+                                  ),
+                                  SelectableText(
+                                    widget.project.desc,
+                                    textAlign: TextAlign.center,
+                                    style: GoogleFonts.mukta(
+                                        fontSize: 18,
+                                        color: Palette.subTitleColor),
+                                  ),
+                                ])
+                          ],
+                        ),
+                      ),
                 Positioned(
-                  right: 16,
-                  top: 16,
+                  right: 8,
+                  top: 8,
                   child: IconButton(
                     icon: Image.asset(
                       'cancel.png',
                       // 'icons8-x-48.png',
                       color: Palette.titleColor,
-                      height: 20,
-                      width: 20,
+                      height: 16,
+                      width: 16,
                     ),
                     onPressed: () {
                       Navigator.pop(context);

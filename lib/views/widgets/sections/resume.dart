@@ -9,6 +9,7 @@ import 'package:portfolio/views/widgets/rich_text_heading.dart';
 
 class Resume extends StatelessWidget {
   final _education = ResumeData().education;
+
   final _experience = ResumeData().experiences;
 
   @override
@@ -40,7 +41,7 @@ class Resume extends StatelessWidget {
             children: [
               _edu(context),
               SizedBox(
-                height: 16,
+                height: 20,
               ),
               _exp(context)
             ],
@@ -62,28 +63,20 @@ class Resume extends StatelessWidget {
                 color: Palette.titleColor,
                 fontWeight: FontWeight.w600),
           ),
-          Row(
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              // SizedBox(
-              //   width: 16,
-              // ),
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  eduSection(_education[0]),
-                  SizedBox(
-                    height: 8,
-                  ),
-                  eduSection(_education[1]),
-                  SizedBox(
-                    height: 8,
-                  ),
-                  eduSection(_education[2]),
-                ],
+              eduSection(_education[0]),
+              SizedBox(
+                height: 8,
               ),
+              eduSection(_education[1]),
+              SizedBox(
+                height: 8,
+              ),
+              eduSection(_education[2]),
             ],
           ),
-
         ],
       ),
     );
@@ -91,39 +84,35 @@ class Resume extends StatelessWidget {
 
   Widget eduSection(EducationModel _education) {
     return Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              _education.degree,
-              style: GoogleFonts.poppins(
-                  fontSize: 19,
-                  color: Palette.primaryColor,
-                  fontWeight: FontWeight.w600),
-            ),
-            Container(
-              margin: EdgeInsets.symmetric(vertical: 4),
-              padding: EdgeInsets.symmetric(horizontal: 16, vertical: 4),
-              color: Palette.whiteSmoke,
-              child: Text(
-                _education.period,
-                style: GoogleFonts.poppins(
-                    fontSize: 15, color: Palette.titleColor),
-              ),
-            ),
-            Text(
-              _education.institute,
-              style: GoogleFonts.mukta(
-                  fontSize: 17, color: Palette.subTitleColor),
-            ),
-            Text(
-              'Grade: ${_education.grades}',
-              style: GoogleFonts.mukta(
-                  fontSize: 17, color: Palette.subTitleColor),
-            ),
-          ],
-        );
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          _education.degree,
+          style: GoogleFonts.poppins(
+              fontSize: 19,
+              color: Palette.primaryColor,
+              fontWeight: FontWeight.w600),
+        ),
+        Container(
+          margin: EdgeInsets.symmetric(vertical: 4),
+          padding: EdgeInsets.symmetric(horizontal: 16, vertical: 4),
+          color: Palette.whiteSmoke,
+          child: Text(
+            _education.period,
+            style: GoogleFonts.poppins(fontSize: 15, color: Palette.titleColor),
+          ),
+        ),
+        Text(
+          _education.institute,
+          style: GoogleFonts.mukta(fontSize: 17, color: Palette.subTitleColor),
+        ),
+        Text(
+          'Grade: ${_education.grades}',
+          style: GoogleFonts.mukta(fontSize: 17, color: Palette.subTitleColor),
+        ),
+      ],
+    );
   }
-
 
   Widget _exp(BuildContext context) {
     return Container(
@@ -137,29 +126,24 @@ class Resume extends StatelessWidget {
                 color: Palette.titleColor,
                 fontWeight: FontWeight.w600),
           ),
-          Row(
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              // SizedBox(
-              //   width: 16,
-              // ),
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  expSection(_experience[0]),
-                  SizedBox(
-                    height: 8,
-                  ),
-                  expSection(_experience[1]),
-                  // SizedBox(
-                  //   height: 8,
-                  // ),
-                  // expSection(_experience[2]),
-                ],
+              expSection(_experience[0]),
+              SizedBox(
+                height: 8,
               ),
+              expSection(_experience[1]),
+              SizedBox(
+                height: 8,
+              ),
+              expSection(_experience[2]),
+              // SizedBox(
+              //   height: 8,
+              // ),
+              // expSection(_experience[2]),
             ],
           ),
-
-
         ],
       ),
     );
@@ -182,19 +166,16 @@ class Resume extends StatelessWidget {
           color: Palette.whiteSmoke,
           child: Text(
             _experience.period,
-            style: GoogleFonts.poppins(
-                fontSize: 15, color: Palette.titleColor),
+            style: GoogleFonts.poppins(fontSize: 15, color: Palette.titleColor),
           ),
         ),
         Text(
           _experience.company,
-          style: GoogleFonts.mukta(
-              fontSize: 17, color: Palette.subTitleColor),
+          style: GoogleFonts.mukta(fontSize: 17, color: Palette.subTitleColor),
         ),
         Text(
           '${_experience.details[0]}',
-          style: GoogleFonts.mukta(
-              fontSize: 17, color: Palette.subTitleColor),
+          style: GoogleFonts.mukta(fontSize: 17, color: Palette.subTitleColor),
         ),
       ],
     );
