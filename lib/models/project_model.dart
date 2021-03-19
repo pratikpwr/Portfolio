@@ -26,14 +26,14 @@ class ProjectList {
         tags: ['Flutter', 'Dart', 'Rest API'],
         imageUrl: ['swipeUp.png'],
         desc:
-            'SwipeUp News App, Built a News app using Flutter. Used NewsAPI.org APIs for news. The app has features like Searching Topics, Reading News from Different Categories, and Specific Sources. The app also has a feature to read the detailed news on a website, for this I used the webView plugin provided by flutter packages. Used onboarding screens to explain how to use the App.Play Store Link -: https://play.google.com/store/apps/details?id=com.pratik.swipe_up_news',
+            'SwipeUp News App, Built a News app using Flutter. Used NewsAPI.org APIs for news. The app has features like Searching Topics, Reading News from Different Categories, and Specific Sources. The app also has a feature to read the detailed news on a website. Play Store Link -: https://play.google.com/store/apps/details?id=com.pratik.swipe_up_news',
         url: 'https://github.com/pratikpwr/SwipeUp-News'),
     ProjectModel(
         projectName: 'College Buddy',
         tags: ['Flutter', 'Dart', 'Flask', 'Python', 'Rest API'],
         imageUrl: ['collegeBuddy.png'],
         desc:
-            'College Buddy, An App for college students to check out their timetable quickly. It shows ongoing and next lecture. in the app, teachers can upload timetable, Assignments, and notices. Students can stay updated with the notices by the college. The app is made in Flutter and Dart and for the backend, I used Flask and python RestAPI\'s.',
+            'College Buddy, An App for college students to check out their timetable quickly. It shows ongoing and next lecture. in the app, teachers can upload timetable, Assignments, and notices. Students can stay updated with the notices. The app is made in Flutter and Dart and for the backend Flask and python RestAPI\'s.',
         url: 'https://github.com/pratikpwr/TimeTable-APP'),
     ProjectModel(
         projectName: 'All Kart',
@@ -79,24 +79,24 @@ class ProjectList {
     //     ],
     //     desc: 'AR E-commerce App',
     //     url: ''),
-    // ProjectModel(
-    //     projectName: 'Nrityosava',
-    //     tags: ['Flutter', 'Dart', 'Internship'],
-    //     imageUrl: ['Nrityosava.png'],
-    //     desc: 'App To learn katthak',
-    //     url: ''),
-    // ProjectModel(
-    //     projectName: 'AAFM India',
-    //     tags: ['Flutter', 'Dart', 'Internship', 'Rest API'],
-    //     imageUrl: ['aafm.png'],
-    //     desc: 'E-commerce',
-    //     url: ''),
-    // ProjectModel(
-    //     projectName: 'How to crack ssb',
-    //     tags: ['Flutter', 'Dart', 'Web-to-flutter'],
-    //     imageUrl: ['ssb.png'],
-    //     desc: 'E-commerce',
-    //     url: ''),
+    ProjectModel(
+        projectName: 'Nrityosava',
+        tags: ['Flutter', 'Dart', 'Internship'],
+        imageUrl: ['Nrityosava.png'],
+        desc: 'App To learn katthak, Katthak Videos through Youtube Plugin',
+        url: 'https://play.google.com/store/apps/details?id=com.isolsgroup.nrityosava'),
+    ProjectModel(
+        projectName: 'AAFM India',
+        tags: ['Flutter', 'Dart', 'Internship', 'Rest API'],
+        imageUrl: ['aafm.png'],
+        desc: 'AAFM India Cerifiacte Verification App. ISOLS Group',
+        url: 'https://play.google.com/store/apps/details?id=com.isolsgroup.aafm'),
+    ProjectModel(
+        projectName: 'How to crack ssb',
+        tags: ['Flutter', 'Dart','Internship', 'Web-to-flutter'],
+        imageUrl: ['ssb.png'],
+        desc: 'How to crack ssb website to app through webview plugin',
+        url: 'https://play.google.com/store/apps/details?id=com.isolsgroup.ssbforum'),
   ];
 
   List<ProjectModel> getProjects() {

@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'PortFolio',
+      title: 'Pratik Pawar PortFolio',
       theme: ThemeData(
         // brightness: Brightness.dark,
         // scaffoldBackgroundColor: Palette.canvasColor,
