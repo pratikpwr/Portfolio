@@ -9,13 +9,15 @@ import '../responsive_handler_widget.dart';
 
 class MySkills extends StatelessWidget {
   final List<Skill> skills = [
-    Skill(title: 'C/C++', value: 60),
+    Skill(title: 'C/C++', value: 55),
     Skill(title: 'Dart', value: 70),
+    Skill(title: 'Javascript', value: 60),
     Skill(title: 'Python', value: 65),
-    Skill(title: 'Git/Github', value: 75),
-    Skill(title: 'Flutter', value: 85),
+    Skill(title: 'Git/Github', value: 70),
+    Skill(title: 'Flutter', value: 80),
+    Skill(title: 'NodeJS', value: 65),
     Skill(title: 'Flask', value: 65),
-    Skill(title: 'Adobe XD', value: 60),
+    Skill(title: 'Adobe XD', value: 55),
     Skill(title: 'Project Management', value: 70)
   ];
 

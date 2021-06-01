@@ -134,11 +134,11 @@ class AboutDetails extends StatelessWidget {
       children: [
         DetailsWidget(
           title: 'BirthDay',
-          value: '21 March 2020',
+          value: '21 March 2000',
         ),
         DetailsWidget(
           title: 'Website',
-          value: 'mywebsite.com',
+          value: 'pratikpwr.github.io',
         ),
         DetailsWidget(
           title: 'Phone',
@@ -150,7 +150,7 @@ class AboutDetails extends StatelessWidget {
         ),
         DetailsWidget(
           title: 'Age',
-          value: '20',
+          value: '21',
         ),
         DetailsWidget(
           title: 'Degree',
@@ -176,11 +176,11 @@ class AboutDetails extends StatelessWidget {
           children: [
             DetailsWidget(
               title: 'BirthDay',
-              value: '21 March 2020',
+              value: '21 March 2000',
             ),
             DetailsWidget(
               title: 'Website',
-              value: 'mywebsite.com',
+              value: 'pratikpwr.github.io/',
             ),
             DetailsWidget(
               title: 'Phone',
@@ -200,7 +200,7 @@ class AboutDetails extends StatelessWidget {
           children: [
             DetailsWidget(
               title: 'Age',
-              value: '20',
+              value: '21',
             ),
             DetailsWidget(
               title: 'Degree',

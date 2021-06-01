@@ -50,7 +50,7 @@ class ResumeData {
   List<ExperienceModel> experiences = [
     ExperienceModel(
         designation: 'SOFTWARE DEVELOPER',
-        period: 'January 2021 - April 2021',
+        period: 'January 2021 - Present',
         company: 'DreamCare Developers, Pune',
         details: [
           '   - Developed Homeaxis Nearme App\n'
