@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/palette.dart';
-import 'file:///D:/MyProjects/AndroidStudioProjects/2.UIProjects/portfolio/lib/views/widgets/buttons/nav_button.dart';
 import 'package:portfolio/views/widgets/responsive_handler_widget.dart';
 
 class NavHeader extends StatelessWidget {
@@ -77,4 +76,3 @@ class Logo extends StatelessWidget {
     );
   }
 }
-

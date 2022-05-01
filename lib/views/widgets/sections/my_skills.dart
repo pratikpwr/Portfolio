@@ -3,13 +3,14 @@ import 'package:flutter_animation_progress_bar/flutter_animation_progress_bar.da
 import 'package:google_fonts/google_fonts.dart';
 import 'package:portfolio/models/skills_model.dart';
 import 'package:portfolio/palette.dart';
+
 import '../heading_underline.dart';
-import '../rich_text_heading.dart';
 import '../responsive_handler_widget.dart';
+import '../rich_text_heading.dart';
 
 class MySkills extends StatelessWidget {
   final List<Skill> skills = [
-    Skill(title: 'C/C++', value: 55),
+    Skill(title: 'GoLang', value: 55),
     Skill(title: 'Dart', value: 70),
     Skill(title: 'Javascript', value: 60),
     Skill(title: 'Python', value: 65),
@@ -107,11 +108,11 @@ class MySkills extends StatelessWidget {
           Container(
             height: 10,
             child: FAProgressBar(
-              currentValue: value,
+              currentValue: value.toDouble(),
               displayTextStyle: TextStyle(color: Palette.primaryColor),
               maxValue: 100,
               size: 100,
-              borderRadius: 0,
+              borderRadius: BorderRadius.circular(0),
               animatedDuration: Duration(milliseconds: 1000),
               displayText: 'Python',
               progressColor: Palette.primaryColor,

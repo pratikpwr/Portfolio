@@ -49,12 +49,21 @@ class ResumeData {
 
   List<ExperienceModel> experiences = [
     ExperienceModel(
+        designation: 'MOBILE APPLICATION DEVELOPER',
+        period: 'December 2022 - Present',
+        company: 'DreamCare Developers, Pune',
+        details: [
+          '   - Setup the project architecture of Setu Farm app\n'
+              '   - Worked on clean architecture and test driven development\n'
+              '   - Worked with the team of 4-5 developers'
+        ]),
+    ExperienceModel(
         designation: 'SOFTWARE DEVELOPER',
-        period: 'January 2021 - Present',
+        period: 'January 2021 - November 2021',
         company: 'DreamCare Developers, Pune',
         details: [
           '   - Developed Homeaxis Nearme App\n'
-              '   - Worked on NodeJs Bakend of Project\n'
+              '   - Worked on NodeJs Backend of Project\n'
               '   - Worked on Flutter Web of project'
         ]),
     ExperienceModel(

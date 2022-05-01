@@ -1,6 +1,6 @@
 # portfolio
 
-Fluttter web portfolio
+Flutter web portfolio
 
 ## Getting Started
 
