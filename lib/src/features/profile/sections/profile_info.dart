@@ -43,7 +43,6 @@ class ProfilePic extends StatelessWidget {
           ? MediaQuery.of(context).size.height * 0.3
           : MediaQuery.of(context).size.width * 0.3,
       decoration: BoxDecoration(
-          color: Palette.lightPrimaryColor,
           shape: BoxShape.circle,
           image: DecorationImage(
             image: AssetImage(
