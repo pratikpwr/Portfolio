@@ -47,14 +47,23 @@ class ResumeData {
 
   List<ExperienceModel> experiences = [
     ExperienceModel(
+      designation: 'Senior Flutter Developer',
+      period: 'July 2023 - Present',
+      company: 'Eigital (EatOS), USA (Remote)',
+      details: [
+        '   - Integrated various physical card readers for payment processing, enabling merchants to select more cost-effective payment platforms, thereby reducing transaction costs by 12%.\n'
+            '   - Increased the crash-free rate from 82% to 94% through effective bug fixing and optimization techniques.\n'
+        '   - Implemented multiple features on native platforms, enhancing app functionality and user experience.'
+      ],
+    ),
+    ExperienceModel(
       designation: 'MOBILE APPLICATION DEVELOPER',
       period: 'December 2021 - July 2023',
       company: 'FarmSetu Technologies, Nashik',
       details: [
         '   - Played a key role in the early project setup, adding essential components like flavors, analytics, sentry, notifications, and payment integrations.\n'
-            '   - Designed and executed complex features in close collaboration with the Product team.\n'
-            '   - Created a Mason template for generating Dart code, substantially reducing boilerplate coding time from 1 hour to 5 minutes.\n',
-        '   - Developed launchpads, including e-commerce and elearning, leading to a notable weekly active user increase of up to 30%.'
+            '   - Developed a Mason template for Dart code generation, reducing boilerplate coding time from 1 hour to 5 minutes, enhancing development efficiency\n'
+            '   - Built launchpads such as e-commerce and elearning, achieving a 30% increase in weekly active users.\n'
       ],
     ),
     ExperienceModel(
@@ -62,9 +71,9 @@ class ResumeData {
       period: 'January 2021 - November 2021',
       company: 'DreamCare Developers, Pune',
       details: [
-        '   - Contributed to enhancing the Nearme Flutter app by addressing issues and introducing new features. Also, resolved bugs in Node.js Rest APIs.\n'
-            '   - Enhanced the Nearme Flutter web app by implementing SEO features that boosted site visibility and attracted more users.\n'
-            '   - Developed the Police Patil project, digitalizing activity tracking for village-assigned individuals. Also built a user-friendly dashboard using Flutter web for efficient administration by the police.'
+        '   - Enhanced the Nearme Flutter app by resolving issues and introducing new features, significantly improving user experience and app performance by 20%.\n'
+            '   - Designed UI/UX and Developed the Police Patil project, digitalizing activity tracking for village-assigned individuals.\n'
+            '   - Created a user-friendly dashboard using Flutter web for efficient administration by the police. Also implemented SEO features in the Nearme Flutter web app, increasing site visibility and user acquisition.'
       ],
     ),
     ExperienceModel(
