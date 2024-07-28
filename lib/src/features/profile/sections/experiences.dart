@@ -32,7 +32,8 @@ class Experiences extends StatelessWidget {
 
   Widget _exp(BuildContext context) {
     return SizedBox(
-      width: MediaQuery.of(context).size.width * 0.5,
+      width: MediaQuery.of(context).size.width *
+          (ResponsiveWidget.isSmallScreen(context) ? 0.75 : 0.5),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -55,14 +56,14 @@ class Experiences extends StatelessWidget {
         Text(
           _experience.designation,
           style: GoogleFonts.poppins(
-            fontSize: 21,
+            fontSize: 22,
             color: Palette.primaryColor,
             fontWeight: FontWeight.w600,
           ),
         ),
         Text(
           _experience.company,
-          style: GoogleFonts.mukta(fontSize: 19, color: Palette.subTitleColor),
+          style: GoogleFonts.mukta(fontSize: 20, color: Palette.subTitleColor),
         ),
         Container(
           margin: const EdgeInsets.symmetric(vertical: 4),
@@ -70,12 +71,12 @@ class Experiences extends StatelessWidget {
           color: Palette.whiteSmoke,
           child: Text(
             _experience.period,
-            style: GoogleFonts.poppins(fontSize: 15, color: Palette.titleColor),
+            style: GoogleFonts.poppins(fontSize: 16, color: Palette.titleColor),
           ),
         ),
         Text(
           _experience.details[0],
-          style: GoogleFonts.mukta(fontSize: 17, color: Palette.subTitleColor),
+          style: GoogleFonts.mukta(fontSize: 18, color: Palette.subTitleColor),
         ),
       ],
     );

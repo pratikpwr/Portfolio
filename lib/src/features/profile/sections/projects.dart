@@ -39,7 +39,7 @@ class Projects extends StatelessWidget {
                   shrinkWrap: true,
                   gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                       crossAxisCount:
-                          !ResponsiveWidget.isLargeScreen(context) ? 1 : 2,
+                          !ResponsiveWidget.isLargeScreen(context) ? 1 : 3,
                       crossAxisSpacing: 25,
                       mainAxisSpacing: 15,
                       childAspectRatio: 1.8),

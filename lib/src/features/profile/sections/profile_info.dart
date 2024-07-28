@@ -79,8 +79,8 @@ class Intro extends StatelessWidget {
         ),
         TypewriterAnimatedTextKit(
           text: const [
-            'Flutter Enthusiast',
-            'Mobile Application Developer',
+            'Senior Flutter Developer',
+            // 'Mobile Application Developer',
             'Freelancer',
           ],
           textStyle: const TextStyle(

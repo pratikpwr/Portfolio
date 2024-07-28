@@ -175,7 +175,7 @@ class Resume extends StatelessWidget {
         ),
         Text(
           '${_experience.details[0]}',
-          style: GoogleFonts.mukta(fontSize: 17, color: Palette.subTitleColor),
+          style: GoogleFonts.mukta(fontSize: 20, color: Palette.subTitleColor),
         ),
       ],
     );

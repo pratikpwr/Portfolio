@@ -146,9 +146,7 @@ class _ProjectCardState extends State<ProjectCard>
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            SizedBox(
-                              height: 6,
-                            ),
+                            SizedBox(height: 6),
                             Hero(
                               tag: widget.project.url,
                               child: Image.asset(
@@ -166,13 +164,9 @@ class _ProjectCardState extends State<ProjectCard>
                                   fontWeight: FontWeight.bold),
                             ),
                             _tags(color: Palette.primaryColor),
-                            SizedBox(
-                              height: 6,
-                            ),
+                            SizedBox(height: 6),
                             githubButton(),
-                            SizedBox(
-                              height: 6,
-                            ),
+                            SizedBox(height: 6),
                             Text(
                               widget.project.desc,
                               textAlign: TextAlign.center,
@@ -198,8 +192,6 @@ class _ProjectCardState extends State<ProjectCard>
                             Row(
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
-                                _iconButton(
-                                    icon: 'icons8-back-48.png', onTap: () {}),
                                 Hero(
                                   tag: widget.project.url,
                                   child: Image.asset(
@@ -211,17 +203,12 @@ class _ProjectCardState extends State<ProjectCard>
                                     fit: BoxFit.fitHeight,
                                   ),
                                 ),
-                                _iconButton(
-                                    icon: 'icons8-forward-48.png',
-                                    onTap: () {}),
                               ],
                             ),
                             Column(
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
-                                  SizedBox(
-                                    height: 6,
-                                  ),
+                                  SizedBox(height: 6),
                                   Text(
                                     widget.project.projectName.toUpperCase(),
                                     style: GoogleFonts.mukta(
@@ -230,13 +217,9 @@ class _ProjectCardState extends State<ProjectCard>
                                         fontWeight: FontWeight.bold),
                                   ),
                                   _tags(color: Palette.primaryColor),
-                                  SizedBox(
-                                    height: 6,
-                                  ),
+                                  SizedBox(height: 6),
                                   githubButton(),
-                                  SizedBox(
-                                    height: 6,
-                                  ),
+                                  SizedBox(height: 6),
                                   SelectableText(
                                     widget.project.desc,
                                     textAlign: TextAlign.center,
@@ -335,7 +318,7 @@ class _ProjectCardState extends State<ProjectCard>
             child: Text(
               "  ${widget.project.tags[index].toUpperCase()}  ",
               style: GoogleFonts.mukta(
-                  fontSize: 18, fontWeight: FontWeight.w500, color: color),
+                  fontSize: 15, fontWeight: FontWeight.w500, color: color),
             ),
           );
         },

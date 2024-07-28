@@ -19,10 +19,8 @@ class AboutMe extends StatelessWidget {
             fontSize: 32,
           ),
           HeadingUnderline(),
-          SizedBox(
-            height: 40,
-          ),
-          _smallIntro(),
+
+          // _smallIntro(),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
@@ -47,7 +45,7 @@ class AboutMe extends StatelessWidget {
           SizedBox(
             height: 20,
           ),
-          _smallIntro(),
+          // _smallIntro(),
           PictureIllustration(
             image: 'flutter_dev.png',
           ),
@@ -62,11 +60,12 @@ class AboutMe extends StatelessWidget {
 
   Widget _smallIntro() {
     return Text(
-      'I am an enthusiastic developer, having a ton of interest in Software Development and Design. Also, I am a Strong believer that imagination brings change and shows a path to develop something amazing and interesting.',
+      '''Results-driven Mobile Application Developer with 3+ years of experience specializing in Flutter development. Proven track record in optimizing app performance, integrating payment systems, and enhancing user experience. Adept at collaborating with cross-functional teams to deliver high-quality applications. Passionate about leveraging creativity and innovation to drive impactful software development.''',
       style: GoogleFonts.poppins(
-          fontSize: 18,
-          fontWeight: FontWeight.w400,
-          color: Palette.subTitleColor),
+        fontSize: 18,
+        fontWeight: FontWeight.w400,
+        color: Palette.subTitleColor,
+      ),
       textAlign: TextAlign.center,
     );
   }
@@ -116,7 +115,7 @@ class AboutDetails extends StatelessWidget {
                 height: totalSize.height * 0.02,
               ),
               Text(
-                'I have the attitude of a learner, the courage of an entrepreneur and the thinking of an optimist, engraved inside me. I wish to be a leader in my community of people. From an engineering perspective, I have chosen \"Flutter Application Developer\" as my specialization fields to develop Cross Platform Apps.',
+                'Results-driven Mobile Application Developer with 3+ years of experience specializing in Flutter development. \nProven track record in optimizing app performance, integrating payment systems, and enhancing user experience. \nAdept at collaborating with cross-functional teams to deliver high-quality applications. Passionate about leveraging creativity and innovation to drive impactful software development.',
                 style: GoogleFonts.poppins(
                     fontSize: 18,
                     fontWeight: FontWeight.w400,
@@ -137,10 +136,7 @@ class AboutDetails extends StatelessWidget {
           title: 'BirthDay',
           value: '21 March 2000',
         ),
-        DetailsWidget(
-          title: 'Website',
-          value: 'pratikpwr.github.io',
-        ),
+
         DetailsWidget(
           title: 'Phone',
           value: '+91-7218172664',
@@ -151,7 +147,7 @@ class AboutDetails extends StatelessWidget {
         ),
         DetailsWidget(
           title: 'Age',
-          value: '21',
+          value: '24',
         ),
         DetailsWidget(
           title: 'Degree',
@@ -161,10 +157,6 @@ class AboutDetails extends StatelessWidget {
         //   title: 'Email',
         //   value: 'pratiksatishpawar@gmail.com',
         // ),
-        DetailsWidget(
-          title: 'Freelance',
-          value: 'Available',
-        ),
       ],
     );
   }
@@ -178,10 +170,6 @@ class AboutDetails extends StatelessWidget {
             DetailsWidget(
               title: 'BirthDay',
               value: '21 March 2000',
-            ),
-            DetailsWidget(
-              title: 'Website',
-              value: 'pratikpwr.github.io/',
             ),
             DetailsWidget(
               title: 'Phone',
@@ -201,7 +189,7 @@ class AboutDetails extends StatelessWidget {
           children: [
             DetailsWidget(
               title: 'Age',
-              value: '21',
+              value: '24',
             ),
             DetailsWidget(
               title: 'Degree',
@@ -209,11 +197,7 @@ class AboutDetails extends StatelessWidget {
             ),
             DetailsWidget(
               title: 'Email',
-              value: 'pratikdaregoan@gmail.com',
-            ),
-            DetailsWidget(
-              title: 'Freelance',
-              value: 'Available',
+              value: 'pratiksatishpawar@gmail.com',
             ),
           ],
         ),
@@ -244,8 +228,9 @@ class DetailsWidget extends StatelessWidget {
         ),
         FittedBox(
           child: RichText(
+            overflow: TextOverflow.ellipsis,
             text: TextSpan(
-                text: ' $title:  ',
+                text: ' $title: ',
                 style: GoogleFonts.poppins(
                     fontSize: 16,
                     fontWeight: FontWeight.bold,

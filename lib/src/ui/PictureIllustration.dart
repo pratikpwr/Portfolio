@@ -14,10 +14,10 @@ class PictureIllustration extends StatelessWidget {
       image,
       height: ResponsiveWidget.isSmallScreen(context)
           ? MediaQuery.of(context).size.height * 0.3
-          : MediaQuery.of(context).size.width * 0.25,
+          : MediaQuery.of(context).size.width * 0.35,
       width: ResponsiveWidget.isSmallScreen(context)
           ? MediaQuery.of(context).size.height * 0.3
-          : MediaQuery.of(context).size.width * 0.25,
+          : MediaQuery.of(context).size.width * 0.30,
     );
   }
 }
